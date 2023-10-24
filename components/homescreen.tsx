@@ -1,18 +1,22 @@
 import { Button, StyleSheet, Text, View } from 'react-native';
 
+import { Stack } from '../common/helper/stacks';
 import { StatusBar } from 'expo-status-bar';
 import { styled } from 'styled-components/native';
 
 const StyledText: typeof Text = styled.Text`
-    color: red;
+    color: black;
     font-size: 50px;
 `;
 
-const Homescreen = ({ navigation, route }) => {
+const Homescreen: React.FunctionComponent = ({ navigation, route }) => {
+    // navigation.setOptions({
+    //     headerShown: false
+    // })
     console.log('Navigation route ', route, "  object ", navigation)
     return(
         <View style={styles.container}>
-        <StyledText allowFontScaling>Learn Yoruba</StyledText>
+        <StyledText allowFontScaling>Learn Yoruba!</StyledText>
         <Button
       title="Go to About Page"
       onPress={() =>

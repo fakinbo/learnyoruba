@@ -4,7 +4,7 @@ import { StatusBar } from 'expo-status-bar';
 import { styled } from 'styled-components/native';
 
 const StyledText: typeof Text = styled.Text`
-    color: red;
+    color: black;
     font-size: 50px;
 `;
 
