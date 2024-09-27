@@ -5,7 +5,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 export const Stack = createNativeStackNavigator();
 
 type stackType = typeof Stack['Screen'];
-const Stacks: React.FunctionComponent<typeof Stack.Navigator> = () => {
+const Stacks = () => {
     return ( <Stack.Navigator
     screenOptions={{ headerShown: true }}
     >
@@ -18,6 +18,9 @@ const Stacks: React.FunctionComponent<typeof Stack.Navigator> = () => {
         <Stack.Screen
           name="Home"
           component={Homescreen}
+          options={{ headerShown: false,
+            headerTitle: () => '',
+        headerBlurEffect: 'light' }}
         />
         <Stack.Screen
           name="About"
