@@ -1,12 +1,10 @@
-import { Button, StyleSheet, Text, View } from 'react-native';
-import { NativeStackNavigatorProps, NativeStackScreenProps } from '@react-navigation/native-stack/lib/typescript/src/types';
-import { NavigationProp, ParamListBase, RouteProp, TypedNavigator } from '@react-navigation/native';
+import { Button, StyleSheet, View } from 'react-native';
 
-import { Stack } from '../common/helper/stacks';
-import { StatusBar } from 'expo-status-bar';
+import type { NativeStackScreenProps } from '@react-navigation/native-stack';
+import { RootStackParamList } from '../common/helper/Stacks';
 import { styled } from 'styled-components/native';
 
-const StyledText: typeof Text = styled.Text`
+const StyledText: ReturnType<typeof styled.Text> = styled.Text`
     color: green;
     font-size: 50px;
 `;
@@ -20,28 +18,17 @@ const styles = StyleSheet.create({
     },
   });
 
-type Props = {
-route: RouteProp<{}>,
-navigation: NavigationProp<{
-    name: string,
-    params: { name: string }
-}>
-};
+type Props = NativeStackScreenProps<RootStackParamList, 'Home'>;
 
-const Homescreen = ({ navigation, route }) => {
-// const Homescreen: ScreenComponentType<ParamListBase, "Home"> | undefined = ({ navigation, route }) => {
-    // navigation.setOptions({
-    //     headerShown: false
-    // })
+const Homescreen: React.FunctionComponent<Props> = ({ navigation, route }) => {
     console.log('Navigation route ', route, "  object ", navigation)
     return(
         <View style={styles.container}>
-        <StyledText allowFontScaling>Learn Yoruba</StyledText>
+        <StyledText>Learn Yoruba</StyledText>
         <Button
       title="Go to About Page"
       onPress={() =>
-        // navigation.navigate('About', {name: 'Jane'})
-        navigation.navigate('About', {name: 'Jane'})
+        navigation.navigate('About',{screen: 'Home', params: {name: 'Jane'} })
       }
     />
       </View>

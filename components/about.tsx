@@ -1,5 +1,7 @@
 import { Button, StyleSheet, Text, View } from 'react-native';
 
+import { NativeStackScreenProps } from '@react-navigation/native-stack';
+import { RootStackParamList } from '../common/helper/Stacks';
 import { StatusBar } from 'expo-status-bar';
 import { styled } from 'styled-components/native';
 
@@ -8,17 +10,19 @@ const StyledText: typeof Text = styled.Text`
     font-size: 50px;
 `;
 
-const About = ({ navigation, route }) => {
+type Props = NativeStackScreenProps<RootStackParamList, 'About'>;
+
+const About: React.FunctionComponent<Props> = ({ navigation, route }) => {
     console.log('Navigation route ', route, "  object ", navigation)
     return(
         <View style={styles.container}>
              <Button
       title="Go to Home Page"
       onPress={() =>
-        navigation.navigate('Home', {name: 'Jane'})
+        navigation.navigate('Home', { screen: 'About' , params: {name: 'Jane'} })
       }
     />
-        <StyledText allowFontScaling>About Page</StyledText>
+        <StyledText>About Page</StyledText>
       </View>
     );
 }

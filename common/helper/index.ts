@@ -1,3 +1,3 @@
-import Stacks from './stacks';
+import Stacks from './Stacks';
 
 export default Stacks;
