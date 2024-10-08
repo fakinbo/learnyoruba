@@ -13,7 +13,6 @@ const StyledText: typeof Text = styled.Text`
 type Props = NativeStackScreenProps<RootStackParamList, 'About'>;
 
 const About: React.FunctionComponent<Props> = ({ navigation, route }) => {
-    console.log('Navigation route ', route, "  object ", navigation)
     return(
         <View style={styles.container}>
              <Button
