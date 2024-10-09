@@ -2,6 +2,7 @@ import { DarkTheme, DefaultTheme, NavigationContainer, ThemeProvider } from '@re
 
 import About from '../../components/About';
 import Homescreen from '../../components/Homescreen';
+import Profile from '../../components/Profile';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import { useColorScheme } from 'react-native';
 
@@ -40,6 +41,10 @@ const Stacks = () => {
         <Stack.Screen
           name="About"
           component={About}
+        />
+        <Stack.Screen
+          name="Profile"
+          component={Profile}
         />
         </Stack.Group>
         </Stack.Navigator>

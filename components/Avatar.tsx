@@ -12,13 +12,13 @@ const StyledImage: ReturnType<typeof styled.Image> = styled.Image`
 
 const styles = StyleSheet.create({
     container: {
-        height: 100,
-        width: 100,
-        borderRadius: '50%',
+        height: 70,
+        width: 70,
+        borderRadius: 50,
       position: 'absolute',
       overflow: 'hidden',
-    //   left: 200,
-      top: 100,
+      left: 40,
+      top: 60,
       marginRight: 'auto',
       marginLeft: 'auto'
     },
